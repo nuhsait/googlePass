@@ -1,0 +1,44 @@
+:root {
+  --label-size: 120px;
+  --input-height: 24px; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Verdana', sans-serif; }
+
+body {
+  width: 300px;
+  height: 200px; }
+
+#app {
+  margin: 0 1rem 1rem 1rem;
+  background-color: #fff;
+  border-radius: 12px; }
+  #app h3 {
+    text-align: center;
+    line-height: 64px;
+    height: 64px; }
+  #app form {
+    display: flex;
+    flex-direction: column; }
+    #app form > span {
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between; }
+    #app form label {
+      width: var(--label-size); }
+      #app form label::after {
+        content: ":";
+        right: 0; }
+    #app form input {
+      width: calc(100% - (var(--label-size)));
+      padding-left: 4px;
+      height: var(--input-height);
+      line-height: var(--input-height);
+      position: relative; }
+      #app form input[type=submit] {
+        width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

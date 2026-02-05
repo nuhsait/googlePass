@@ -1,0 +1,53 @@
+:root{
+  --label-size: 120px;
+  --input-height: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Verdana', sans-serif;
+}
+
+body{
+  width: 300px;
+  height: 200px;
+}
+
+#app{
+  margin: 0 1rem 1rem 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  h3{
+    text-align: center;
+    line-height: 64px;
+    height: 64px;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    & > span {
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    label{
+      width: var(--label-size);
+      &::after{
+        content: ":";
+        right: 0;
+      }
+    }
+    input{
+      width: calc(100% - (var(--label-size)));
+      padding-left: 4px;
+      height: var(--input-height);
+      line-height: var(--input-height);
+      position: relative;
+      &[type=submit]{
+        width: 100%;
+      }
+    }
+  }
+}
