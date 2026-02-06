@@ -1,6 +1,7 @@
 :root{
   --label-size: 120px;
   --input-height: 24px;
+  --checkbox-height: 16px;
 }
 
 * {
@@ -11,11 +12,12 @@
 }
 
 body{
-  width: 300px;
-  height: 200px;
+  width: 298px;
+  height: auto;
+  border: 1px solid black;
 }
 
-#app{
+#login{
   margin: 0 1rem 1rem 1rem;
   background-color: #fff;
   border-radius: 12px;
@@ -31,12 +33,19 @@ body{
       margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
+      &:nth-child(3){
+        justify-content: flex-start;
+      }
     }
     label{
       width: var(--label-size);
+      line-height: var(--input-height);
       &::after{
         content: ":";
         right: 0;
+      }
+      &[for="remember"]{
+        line-height: var(--checkbox-height);
       }
     }
     input{
@@ -47,6 +56,53 @@ body{
       position: relative;
       &[type=submit]{
         width: 100%;
+      }
+      &[type=checkbox]{
+        width: var(--checkbox-height);
+        height: var(--checkbox-height);
+      }
+
+    }
+  }
+}
+
+#app{
+  .head{
+    padding: 16px;
+    border-bottom: 1px solid black;
+    background-color: #ddd;
+    h2{
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .main{
+    height: 300px;
+  }
+  .nav{
+    display: flex;
+    background-color: #ddd;
+    padding: 8px 0;
+    border-top: 1px solid black;
+    div{
+      margin-left: 8px;
+      width: 50px;
+      height: 50px;
+      border: 2px solid black;
+      border-radius: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 200ms;
+      &:nth-last-child(1){
+        margin-right: 8px;
+      }
+      &:hover{
+        background-color: #ddd;
+      }
+      img{
+        width: 44px;
       }
     }
   }
